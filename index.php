@@ -19,7 +19,7 @@ if (isset($_SESSION['perso'])){
 	$perso = $_SESSION['perso'];
 }
 
-$db = new PDO('mysql:host=localhost;dbname=php_tp1','root','');
+$db = new PDO('mysql:host=localhost;dbname=mydb','root','');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 $manager = new PersonnagesManager($db);
@@ -111,11 +111,11 @@ if (isset($_POST['creer']) && isset($_POST['nom'])){
 				<legend>Mes informations</legend>
 				<p>
 					Nom : <?=  htmlspecialchars($perso->nom()) ?><br /> 
-					Dégâts : <?= $perso->degats() ?>
+					PV : <?= $perso->pv() ?>
 					Expérience : <?= $perso->experience() ?>
 					Niveau : <?= $perso->niveau() ?>
 					Nombre des coups : <?= $perso->nbCoups() ?>
-					Date de dernier coup : <?= $perso->dateDernierCoup()->format('d/m/Y') ?>
+					
 				</p>
 			</fieldset>
 			<fieldset>
@@ -128,7 +128,7 @@ if (isset($_POST['creer']) && isset($_POST['nom'])){
 						echo 'Personne à frapper!';
 					} else {
 						foreach($persos as $unPerso){
-							echo '<a href="?frapper='.$unPerso->id().'">'.htmlspecialchars($unPerso->nom()).'</a> (dégâts : '.$unPerso->degats().', expérience : '.$unPerso->experience().', niveau : '.$unPerso->niveau().', nombre des coups : '.$unPerso->nbCoups().', date de dernier coup : '.$unPerso->dateDernierCoup()->format('d/m/Y').')<br />';
+							echo '<a href="?frapper='.$unPerso->id().'">'.htmlspecialchars($unPerso->nom()).'</a> (pv : '.$unPerso->pv().', expérience : '.$unPerso->experience().', niveau : '.$unPerso->niveau().', nombre des coups : '.$unPerso->nbCoups().'<br />';
 							
 						}
 					}

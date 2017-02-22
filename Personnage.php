@@ -3,7 +3,7 @@ class Personnage
 {
 	private $_id;
 	private $_nom;
-	private $_degats;
+	private $_pv;
 	private $_experience;
 	private $_niveau;
 	private $_nbCoups;
@@ -26,34 +26,31 @@ class Personnage
 			return self::CEST_MOI;
 		}
 		
-		$now = new DateTime('NOW');
-		if ($this->nbCoups() >= 3 && $this->dateDernierCoup()->format('Y-m-d') == $now->format('Y-m-d')) {
-			return self::PAS_AUJOURDHUI;
-		}
+	
 		
-		if ($this->dateDernierCoup()->format('Y-m-d') == $now->format('Y-m-d')){
-			$this->setNbCoups($this->nbCoups() + 1);
+		if ($this->setNbCoups($this->nbCoups() + 1)){
+			
 		} else {
 			$this->setNbCoups(1);
 		}
 		
 		
-		$this->setDateDernierCoup($now->format('Y-m-d'));
+	
 		
-		return $perso->recevoirDegats($this->niveau() * 5);
+		return $perso->recevoirpv($this->niveau() - 5);
 	}
 
-	public function recevoirDegats($force)
+	public function recevoirpv($force)
 	{
-		$this->setDegats($this->degats() + $force);		
-		if ($this->degats() >= 100){
+		$this->setpv($this->pv() + $force);		
+		if ($this->pv() == 0){
 			return self::PERSONNAGE_TUE;
 		}
 		return self::PERSONNAGE_FRAPPE;
 	}
 	
 	public function gagnerExperience(){
-		$this->setExperience($this->experience() + $this->niveau() * 5);
+		$this->setExperience($this->experience() + $this->niveau() * 2);
 		
 		if ($this->experience() >= 100){
 			$this->setNiveau($this->niveau() + 1);
@@ -83,9 +80,9 @@ class Personnage
 		return $this->_nom;
 	}
 	
-	public function degats()
+	public function pv()
 	{
-		return $this->_degats;
+		return $this->_pv;
 	}
 	
 	public function experience(){
@@ -122,11 +119,11 @@ class Personnage
 		}
 	}
 	
-	public function setDegats($degats)
+	public function setpv($pv)
 	{
-		$degats = (int) $degats;
-		//if ($degats >= 0 && $degats <= 100) {
-			$this->_degats = $degats;
+		$pv = (int) $pv;
+		//if ($pv >= 0 && $pv <= 100) {
+			$this->_pv = $pv;
 		//}
 	}
 	
