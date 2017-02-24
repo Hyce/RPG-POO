@@ -1,17 +1,18 @@
 <?php
-class Personnage
+class Monstre
 {
 	private $_id;
 	private $_nom;
 	private $_pv;
-	private $_experience;
+	private $_pvitesse;
 	private $_niveau;
 	private $_nbCoups;
-	private $_dateDernierCoup;
+	private $_pdefense;
+	private $_pattaque;
 	
 	const CEST_MOI = 1;
-	const PERSONNAGE_TUE = 2;
-	const PERSONNAGE_FRAPPE = 3;
+	const MONSTRE_TUE = 2;
+	const MONSTRE_FRAPPE = 3;
 	const PAS_AUJOURDHUI = 4;
 	
 	public function __construct(array $donnees)
@@ -20,9 +21,9 @@ class Personnage
 	}
 	
 
-	public function frapper(Personnage $perso)
+	public function frapper(Monstre $monster)
 	{
-		if ($this->id() == $perso->id()){
+		if ($this->id() == $monster->id()){
 			return self::CEST_MOI;
 		}
 		
@@ -37,16 +38,16 @@ class Personnage
 		
 	
 		
-		return $perso->recevoirpv($this->niveau() - 5);
+		return $monster->recevoirpv($this->niveau() - 5);
 	}
 
 	public function recevoirpv($force)
 	{
 		$this->setpv($this->pv() + $force);		
-		if ($this->pv() <= 0){
-			return self::PERSONNAGE_TUE;
+		if ($this->pv() == 0){
+			return self::MONSTRE_TUE;
 		}
-		return self::PERSONNAGE_FRAPPE;
+		return self::MONSTRE_FRAPPE;
 	}
 	
 	public function gagnerExperience(){
@@ -119,7 +120,7 @@ class Personnage
 		}
 	}
 	
-	public function setPv($pv)
+	public function setpv($pv)
 	{
 		$pv = (int) $pv;
 		//if ($pv >= 0 && $pv <= 100) {

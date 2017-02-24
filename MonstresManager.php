@@ -1,33 +1,34 @@
 <?php
-
 require_once("VivantManager.php");
 
-class PersonnagesManager extends VivantManager
+class MonstresManager extends VivantManager
 {
 	
 	public function __construct()
 	{
 		parent::__construct();
-		$this->_table = "hero";
+		$this->_table = "ennemis";
 	}
-
-	public function add(Personnage $perso)
+	
+	public function add(Monstre $monster)
 	{
-		$q = $this->_db->prepare('INSERT INTO hero (nom) VALUES (:nom)');
-		$q->bindValue(':nom', $perso->nom());
+		$q = $this->_db->prepare('INSERT INTO ennemis (nom) VALUES (:nom)');
+		$q->bindValue(':nom', $monster->nom());
 		$q->execute();
 		
-		$perso->hydrate([
+		$monster->hydrate([
 			'id'=>$this->_db->lastInsertId(),
 			'pv' => 0,
 			'experience' => 0,
 			'niveau' => 1,
 			'nbCoups' => 0,]);
 	}
+
+
 	
-	public function delete(Personnage $perso)
+	public function delete(Monstre $monster)
 	{
-		$this->_db->exec('DELETE FROM hero WHERE id = '.$perso->id());
+		$this->_db->exec('DELETE FROM '.$this->_table.' WHERE id = '.$monster->id());
 	}
 	
 
@@ -38,39 +39,39 @@ class PersonnagesManager extends VivantManager
 			$q = $this->_db->query('SELECT id, nom, pv, experience, niveau  FROM hero WHERE id = '.$info);
 			$donnees = $q->fetch(PDO::FETCH_ASSOC);
 			
-			return new Personnage($donnees);
+			return new Monstre($donnees);
 		}
 		
 		$q = $this -> _db ->prepare('SELECT id, nom, pv, experience, niveau FROM hero WHERE nom = :nom');
 		$q->execute([':nom' => $info]);
 		$donnees = $q->fetch(PDO::FETCH_ASSOC);
 		
-		return new Personnage($donnees);
+		return new Monstre($donnees);
 	}
 	
 	public function getList($nom)
 	{
-		$persos = [];
+		$monsters = [];
 
 		$q  =  $this->_db->prepare('SELECT id, nom, pv, experience, niveau FROM hero WHERE nom <> :nom ORDER BY nom');
 		$q->execute([':nom'=>$nom]);
 
 		while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
-			$persos[] = new Personnage($donnees);
+			$monsters[] = new Monstre($donnees);
 		}
-		return $persos;
+		return $monsters;
 	}
 	
-	public function update(Personnage $perso)
+	public function update(Monstre $monster)
 	{
 		$q  =  $this->_db->prepare('UPDATE hero SET pv = :pv, experience = :experience, niveau = :niveau WHERE id = :id');
-		$q->bindValue(':pv',$perso->pv(), PDO::PARAM_INT);
-		$q->bindValue(':experience',$perso->experience(), PDO::PARAM_INT);
-		$q->bindValue(':niveau',$perso->niveau(), PDO::PARAM_INT);
+		$q->bindValue(':pv',$monster->pv(), PDO::PARAM_INT);
+		$q->bindValue(':experience',$monster->experience(), PDO::PARAM_INT);
+		$q->bindValue(':niveau',$monster->niveau(), PDO::PARAM_INT);
 	
 
-		$q->bindValue(':id',$perso->id(), PDO::PARAM_INT);
+		$q->bindValue(':id',$monster->id(), PDO::PARAM_INT);
 		$q->execute();
 	}
 	
