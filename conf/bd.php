@@ -1,17 +1,10 @@
 <?php
 
-$host = 'localhost';
-$dbname = 'mydb';
-$user = 'root';
-$pass = 'root';
-
-
-try{
-    $db = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+try {
+    $db = new PDO('mysql:host=localhost:8889;dbname=mydb', 'root', 'root');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 }
-catch(Exception $e)
-{
-    echo 'Erreur : '.$e->getMessage().'<br />';
-    echo 'N° : '.$e->getCode();
+catch( PDOException $Exception ) {
+    // Note The Typecast To An Integer!
+   echo  $Exception->getMessage( )." ".$Exception->getCode( );
 }
-

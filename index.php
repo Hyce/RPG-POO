@@ -1,4 +1,5 @@
 <?php
+require ('conf/bd.php');
 
 function chargerClasse($classname)
 {
@@ -18,9 +19,6 @@ if (isset($_GET['deconnexion'])){
 if (isset($_SESSION['perso'])){
 	$perso = $_SESSION['perso'];
 }
-
-$db = new PDO('mysql:host=localhost;dbname=mydb','root','');
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 $manager = new PersonnagesManager($db);
 
