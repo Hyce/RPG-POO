@@ -9,25 +9,25 @@ require ('conf/bd.php');
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<form class="form-horizontal" method="post" action="index.php">
+<form class="form-horizontal" method="post" action="Inscription_post.php">
         <div class="modal-header">
             <h4>Créer un compte</h4>
         </div>
         <div class="modal-body">
             <div class="col-lg-3">Nom :</div>
-                <div class="form-group col-lg-9"><input class="form-control" type="text" name="pseudo" placeholder="Nom">
+                <div class="form-group col-lg-9"><input class="form-control" id="nom" type="text" name="nom" placeholder="Nom">
             </div>
             <div class="col-lg-3">Prénom :</div>
-            <div class="form-group col-lg-9"><input class="form-control" type="text" name="pseudo" placeholder="prenom">
+            <div class="form-group col-lg-9"><input class="form-control" id="prenom" type="text" name="prenom" placeholder="prenom">
             </div>
             <div class="col-lg-3">Pseudo :</div>
-                <div class="form-group col-lg-9"><input class="form-control" type="text" name="pseudo" placeholder="Pseudo">
+                <div class="form-group col-lg-9"><input class="form-control" id="pseudo" type="text" name="pseudo" placeholder="Pseudo">
             </div>
             <div class="col-lg-3">Email :</div>
-                <div class="form-group col-lg-9"><input class="form-control" type="text" name="email" placeholder="Email">
+                <div class="form-group col-lg-9"><input class="form-control" id="email" type="text" name="email" placeholder="Email">
             </div>
             <div class="col-lg-3">Mot de passe :</div>
-                <div class="form-group col-lg-9"><input class="form-control" type="password" name="password" placeholder="Password">
+                <div class="form-group col-lg-9"><input class="form-control" id="password" type="password" name="password" placeholder="Password">
             </div>
             <input type="submit" value="Log in" class="btn  btn-primary ">
         </div>

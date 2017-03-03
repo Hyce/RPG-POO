@@ -71,7 +71,7 @@ if (isset($_POST['creer']) && isset($_POST['nom'])){
 					$message = 'Mais... pouquoi voulez-vous vous frapper ???';
 					break;
 				case Personnage::PAS_AUJOURDHUI : 
-					$message = 'Vous avais déjà frappé 3 fois aujourd\'hui. Revenez demain !';
+					$message = 'Vous avez déjà frappé 3 fois aujourd\'hui. Revenez demain !';
 					break;
 				case Personnage::PERSONNAGE_FRAPPE : 
 					$message = 'Le personnage a bien été frappé !';

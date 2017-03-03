@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d69aa435-56d5-400f-be06-2ce693104313" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/admingenerator" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Inscription_post.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Database.php" afterPath="$PROJECT_DIR$/Database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Personnage.php" afterPath="$PROJECT_DIR$/Personnage.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/bd.php" afterPath="$PROJECT_DIR$/conf/bd.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
@@ -30,13 +31,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="singin.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="singin.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/singin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+            <state relative-caret-position="190">
+              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
               <folding>
-                <marker date="1487936423790" expanded="true" signature="2029:2137" placeholder="INSERT INTO joueur... " />
+                <marker date="1488550938000" expanded="true" signature="2095:2203" placeholder="INSERT INTO joueur... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inscription_post.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Inscription_post.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <marker date="1488559409000" expanded="true" signature="477:566" placeholder="INSERT INTO infos_principales_utilisateur... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+              <folding>
+                <marker date="1488543918000" expanded="true" signature="1156:1225" placeholder="SELECT id FR... mydb" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Personnage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Personnage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="958">
+              <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MonstresManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MonstresManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1488543440000" expanded="true" signature="253:292" placeholder="INSERT INTO ennemis... " />
+                <marker date="1488543440000" expanded="true" signature="565:606" placeholder="DELETE FROM " />
+                <marker date="1488543440000" expanded="true" signature="714:775" placeholder="SELECT id, n... hero" />
+                <marker date="1488543440000" expanded="true" signature="903:968" placeholder="SELECT id, n... hero" />
+                <marker date="1488543440000" expanded="true" signature="1171:1250" placeholder="SELECT id, n... hero" />
+                <marker date="1488543440000" expanded="true" signature="1483:1566" placeholder="UPDATE hero " />
               </folding>
             </state>
           </provider>
@@ -45,18 +97,38 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="1095">
+              <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bd.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bd.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/bd.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="75">
+              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -65,24 +137,27 @@
       <file leaf-file-name="PersonnagesManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PersonnagesManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="-635">
               <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
               <folding>
-                <marker date="1487880351534" expanded="true" signature="184:220" placeholder="INSERT INTO hero... " />
-                <marker date="1487880351534" expanded="true" signature="478:503" placeholder="SELECT COUNT... hero" />
-                <marker date="1487880351534" expanded="true" signature="593:621" placeholder="DELETE FROM " />
-                <marker date="1487880351534" expanded="true" signature="737:774" placeholder="SELECT COUNT... hero" />
-                <marker date="1487880351534" expanded="true" signature="834:876" placeholder="SELECT COUNT... hero" />
-                <marker date="1487880351534" expanded="true" signature="1042:1103" placeholder="SELECT id, n... hero" />
-                <marker date="1487880351534" expanded="true" signature="1234:1299" placeholder="SELECT id, n... hero" />
-                <marker date="1487880351534" expanded="true" signature="1503:1582" placeholder="SELECT id, n... hero" />
-                <marker date="1487880351534" expanded="true" signature="1815:1898" placeholder="UPDATE hero " />
+                <marker date="1488543440000" expanded="true" signature="254:290" placeholder="INSERT INTO hero... " />
+                <marker date="1488543440000" expanded="true" signature="558:586" placeholder="DELETE FROM " />
+                <marker date="1488543440000" expanded="true" signature="692:753" placeholder="SELECT id, n... hero" />
+                <marker date="1488543440000" expanded="true" signature="884:949" placeholder="SELECT id, n... hero" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,10 +169,18 @@
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/db.php" />
         <option value="$PROJECT_DIR$/add_user.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/conf/bd.php" />
+        <option value="$PROJECT_DIR$/Database.php" />
         <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/conf/bd.php" />
+        <option value="$PROJECT_DIR$/config/db.php" />
+        <option value="$PROJECT_DIR$/mail/contact_me.php" />
+        <option value="$PROJECT_DIR$/pkne.html" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Personnage.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/singin.php" />
+        <option value="$PROJECT_DIR$/Inscription_post.php" />
       </list>
     </option>
   </component>
@@ -111,10 +194,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -169,20 +250,50 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG-POO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG-POO" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG-POO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG-POO" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="conf" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../crud" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -235,23 +346,24 @@
       <workItem from="1487880458233" duration="2254000" />
       <workItem from="1487921893723" duration="2817000" />
       <workItem from="1487927663101" duration="6568000" />
+      <workItem from="1488543521293" duration="5557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16048000" />
+    <option name="totallyTimeSpent" value="21605000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18305598" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18498169" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892057" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -303,11 +415,46 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/singin.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/bd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonnagesManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding>
+            <marker date="1488543440000" expanded="true" signature="254:290" placeholder="INSERT INTO hero... " />
+            <marker date="1488543440000" expanded="true" signature="558:586" placeholder="DELETE FROM " />
+            <marker date="1488543440000" expanded="true" signature="692:753" placeholder="SELECT id, n... hero" />
+            <marker date="1488543440000" expanded="true" signature="884:949" placeholder="SELECT id, n... hero" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singin.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <marker date="1487936423790" expanded="true" signature="2029:2137" placeholder="INSERT INTO joueur... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -316,7 +463,7 @@
         <state relative-caret-position="136">
           <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding>
-            <marker date="1487931130201" expanded="true" signature="1156:1225" placeholder="SELECT id FR... mydb" />
+            <marker date="1488543918000" expanded="true" signature="1156:1225" placeholder="SELECT id FR... mydb" />
           </folding>
         </state>
       </provider>
@@ -334,15 +481,10 @@
         <state relative-caret-position="1326">
           <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
           <folding>
-            <marker date="1487880351534" expanded="true" signature="184:220" placeholder="INSERT INTO hero... " />
-            <marker date="1487880351534" expanded="true" signature="478:503" placeholder="SELECT COUNT... hero" />
-            <marker date="1487880351534" expanded="true" signature="593:621" placeholder="DELETE FROM " />
-            <marker date="1487880351534" expanded="true" signature="737:774" placeholder="SELECT COUNT... hero" />
-            <marker date="1487880351534" expanded="true" signature="834:876" placeholder="SELECT COUNT... hero" />
-            <marker date="1487880351534" expanded="true" signature="1042:1103" placeholder="SELECT id, n... hero" />
-            <marker date="1487880351534" expanded="true" signature="1234:1299" placeholder="SELECT id, n... hero" />
-            <marker date="1487880351534" expanded="true" signature="1503:1582" placeholder="SELECT id, n... hero" />
-            <marker date="1487880351534" expanded="true" signature="1815:1898" placeholder="UPDATE hero " />
+            <marker date="1488543440000" expanded="true" signature="254:290" placeholder="INSERT INTO hero... " />
+            <marker date="1488543440000" expanded="true" signature="558:586" placeholder="DELETE FROM " />
+            <marker date="1488543440000" expanded="true" signature="692:753" placeholder="SELECT id, n... hero" />
+            <marker date="1488543440000" expanded="true" signature="884:949" placeholder="SELECT id, n... hero" />
           </folding>
         </state>
       </provider>
@@ -351,9 +493,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <marker date="1487936423790" expanded="true" signature="2029:2137" placeholder="INSERT INTO joueur... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -362,7 +502,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1487931130201" expanded="true" signature="1156:1225" placeholder="SELECT id FR... mydb" />
+            <marker date="1488543918000" expanded="true" signature="1156:1225" placeholder="SELECT id FR... mydb" />
           </folding>
         </state>
       </provider>
@@ -388,15 +528,10 @@
         <state relative-caret-position="1326">
           <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
           <folding>
-            <marker date="1487880351534" expanded="true" signature="184:220" placeholder="INSERT INTO hero... " />
-            <marker date="1487880351534" expanded="true" signature="478:503" placeholder="SELECT COUNT... hero" />
-            <marker date="1487880351534" expanded="true" signature="593:621" placeholder="DELETE FROM " />
-            <marker date="1487880351534" expanded="true" signature="737:774" placeholder="SELECT COUNT... hero" />
-            <marker date="1487880351534" expanded="true" signature="834:876" placeholder="SELECT COUNT... hero" />
-            <marker date="1487880351534" expanded="true" signature="1042:1103" placeholder="SELECT id, n... hero" />
-            <marker date="1487880351534" expanded="true" signature="1234:1299" placeholder="SELECT id, n... hero" />
-            <marker date="1487880351534" expanded="true" signature="1503:1582" placeholder="SELECT id, n... hero" />
-            <marker date="1487880351534" expanded="true" signature="1815:1898" placeholder="UPDATE hero " />
+            <marker date="1488543440000" expanded="true" signature="254:290" placeholder="INSERT INTO hero... " />
+            <marker date="1488543440000" expanded="true" signature="558:586" placeholder="DELETE FROM " />
+            <marker date="1488543440000" expanded="true" signature="692:753" placeholder="SELECT id, n... hero" />
+            <marker date="1488543440000" expanded="true" signature="884:949" placeholder="SELECT id, n... hero" />
           </folding>
         </state>
       </provider>
@@ -405,105 +540,197 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487936423790" expanded="true" signature="2029:2137" placeholder="INSERT INTO joueur... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/console" />
     <entry file="file://$PROJECT_DIR$/composer.json" />
     <entry file="file://$PROJECT_DIR$/gen/edit.html.twig" />
-    <entry file="file://$PROJECT_DIR$/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db.php" />
-    <entry file="file://$PROJECT_DIR$/add_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crud.php">
+    <entry file="file://$PROJECT_DIR$/add_user.php" />
+    <entry file="file://$PROJECT_DIR$/crud.php" />
+    <entry file="file://$PROJECT_DIR$/styles.css" />
+    <entry file="file://$PROJECT_DIR$/Monstre.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VivantManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/session.php.PFILE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/bd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mail/contact_me.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpmailer/phpmailer/class.phpmailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1950">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpmailer/phpmailer/PHPMailerAutoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkne.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PersonnagesManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="-635">
           <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
           <folding>
-            <marker date="1487880351534" expanded="true" signature="184:220" placeholder="INSERT INTO hero... " />
-            <marker date="1487880351534" expanded="true" signature="478:503" placeholder="SELECT COUNT... hero" />
-            <marker date="1487880351534" expanded="true" signature="593:621" placeholder="DELETE FROM " />
-            <marker date="1487880351534" expanded="true" signature="737:774" placeholder="SELECT COUNT... hero" />
-            <marker date="1487880351534" expanded="true" signature="834:876" placeholder="SELECT COUNT... hero" />
-            <marker date="1487880351534" expanded="true" signature="1042:1103" placeholder="SELECT id, n... hero" />
-            <marker date="1487880351534" expanded="true" signature="1234:1299" placeholder="SELECT id, n... hero" />
-            <marker date="1487880351534" expanded="true" signature="1503:1582" placeholder="SELECT id, n... hero" />
-            <marker date="1487880351534" expanded="true" signature="1815:1898" placeholder="UPDATE hero " />
+            <marker date="1488543440000" expanded="true" signature="254:290" placeholder="INSERT INTO hero... " />
+            <marker date="1488543440000" expanded="true" signature="558:586" placeholder="DELETE FROM " />
+            <marker date="1488543440000" expanded="true" signature="692:753" placeholder="SELECT id, n... hero" />
+            <marker date="1488543440000" expanded="true" signature="884:949" placeholder="SELECT id, n... hero" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="1095">
+          <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
+    <entry file="file://$PROJECT_DIR$/img/bg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
-          <folding>
-            <marker date="1487931130201" expanded="true" signature="1156:1225" placeholder="SELECT id FR... mydb" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Personnage.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="958">
+          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MonstresManager.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1488543440000" expanded="true" signature="253:292" placeholder="INSERT INTO ennemis... " />
+            <marker date="1488543440000" expanded="true" signature="565:606" placeholder="DELETE FROM " />
+            <marker date="1488543440000" expanded="true" signature="714:775" placeholder="SELECT id, n... hero" />
+            <marker date="1488543440000" expanded="true" signature="903:968" placeholder="SELECT id, n... hero" />
+            <marker date="1488543440000" expanded="true" signature="1171:1250" placeholder="SELECT id, n... hero" />
+            <marker date="1488543440000" expanded="true" signature="1483:1566" placeholder="UPDATE hero " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <marker date="1488543918000" expanded="true" signature="1156:1225" placeholder="SELECT id FR... mydb" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inscription_post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <marker date="1488559409000" expanded="true" signature="477:566" placeholder="INSERT INTO infos_principales_utilisateur... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/singin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+        <state relative-caret-position="190">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding>
-            <marker date="1487936423790" expanded="true" signature="2029:2137" placeholder="INSERT INTO joueur... " />
+            <marker date="1488550938000" expanded="true" signature="2095:2203" placeholder="INSERT INTO joueur... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/bd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
