@@ -1,9 +1,7 @@
 <?php
-<<<<<<< HEAD
-=======
+
 require ('conf/bd.php');
 
->>>>>>> master
 function chargerClasse($classname)
 {
 	require $classname.'.php';
@@ -23,7 +21,6 @@ if (isset($_SESSION['perso'])){
 	$perso = $_SESSION['perso'];
 }
 
-<<<<<<< HEAD
 /*
 $req = $db->prepare("INSERT INTO hero (nom, pv) VALUES (:nom, :pv)"); 
 $req->execute(array(
@@ -33,9 +30,6 @@ $req->execute(array(
             ));
 */
 $manager = new PersonnagesManager();
-=======
-$manager = new PersonnagesManager($db);
->>>>>>> master
 
 if (isset($_POST['creer']) && isset($_POST['nom'])){
 	$perso = new Personnage();
