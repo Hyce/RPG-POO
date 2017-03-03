@@ -1,12 +1,12 @@
 <?php session_start();
-require ('conf/bd.php');
+require ('Database.php');
 ?>
 
     <body>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <form class="form-horizontal" method="post" action="personnage.php">
+    <form class="form-horizontal" method="post" action="Personnage.php">
         <div class="modal-header">
             <h4>Connexion</h4>
         </div>
@@ -28,7 +28,7 @@ if (isset($_POST["pseudo"]) &&
     $password = htmlspecialchars($_POST["password"]);
 
 
-    $request = $db->prepare("SELECT id FROM mydb WHERE pseudo LIKE :pseudo AND password= :password");
+    $request = $db->prepare("SELECT id FROM php_tp1 WHERE pseudo LIKE :pseudo AND password= :password");
     $request->execute(
         array(
             "pseudo" => $pseudo,

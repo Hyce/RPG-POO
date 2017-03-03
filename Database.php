@@ -1,32 +1,32 @@
-<?php 
+<?php
 /*
-  Usage : 
+  Usage :
    $pdo = Database::getInstance();
-  
+
 */
 class Database
 {
-  static private $_instance = null; 
-  
-  public function __construct()
-  {
-    trigger_error("Not allowed to create a Database Object");
-  }
-  
-  private static function getPDO()
-  {
-    $db = new PDO('mysql:host=localhost;dbname=php_tp1','root','');
-		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-    return $db;
-  }
+    static private $_instance = null;
 
-  static public function getInstance()
-  {
-    if(self::$_instance == null)
+    public function __construct()
     {
-      self::$_instance = self::getPDO();
+        trigger_error("Not allowed to create a Database Object");
     }
-    return self::$_instance;
-  }
+
+    private static function getPDO()
+    {
+        $db = new PDO('mysql:host=localhost:8889;dbname=php_tp1','root','root');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+        return $db;
+    }
+
+    static public function getInstance()
+    {
+        if(self::$_instance == null)
+        {
+            self::$_instance = self::getPDO();
+        }
+        return self::$_instance;
+    }
 
 }
