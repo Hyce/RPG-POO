@@ -1,95 +1,56 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: annel
- * Date: 02/03/2017
- * Time: 22:04
- */
+
 require_once ('../Database.php');
 
-$id ='';
-$nom ='';
-$prenom ='';
-$pseudo ='';
-$email ='';
-$password ='';
-
-function getPosts()
-{
- $posts = array();
-    $posts[0] = $_POST['id'];
-    $posts[0] = $_POST['nom'];
-    $posts[0] = $_POST['prenom'];
-    $posts[0] = $_POST['pseudo'];
-    $posts[0] = $_POST['email'];
-    $posts[0] = $_POST['password'];
-
-    return $posts;
-}
-
-// display
-
-if (isset($_Post['search'])){
-    $data = getPosts();
-    if (empty($data[0]))
-    {
-        echo 'Entrer un id';
-    }
-    else{
-
-        $searchStmt = $con->prepare('SELECT * FROM joueur WHERE id = :id');
-        $searchStmt->execute(array(
-            ':id'=> $data[0]
-        ));
-
-        if($searchStmt) {
-            $user = $searchStmt->fetch();
-        if (empty($user))
-            {
-                echo 'aucun id';
-            }
-            $id = $user[0];
-            $nom = $user[1];
-            $prenom = $user[2];
-            $pseudo = $user[3];
-            $email = $user[4];
-            $password = $user[5];
-        }
-    }
-}
-
-// insert data
-
-if (isset($_POST['insert']))
-{
-    
-}
 ?>
-
+<!DOCTYPE html>
+<html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+
     <title>Crud</title>
 </head>
 <body>
-<div class="row">
-    <form action="joueur.php" method="post" class="modal-body">
-        <div class="col-lg-3">Id :</div>
-            <div class="form-group col-lg-9"><input type="text" class="form-control" name="id" placeholder="id" value="<?php echo $id; ?>"></div>
-        <div class="col-lg-3">Nom :</div>
-            <div class="form-group col-lg-9"><input type="text" class="form-control" name="nom" placeholder="nom" value="<?php echo $nom; ?>"></div>
-        <div class="col-lg-3">Prénom :</div>
-            <div class="form-group col-lg-9"> <input type="text" class="form-control" name="prenom" placeholder="prenom" value="<?php echo $prenom; ?>"></div>
-        <div class="col-lg-3">Pseudo :</div>
-            <div class="form-group col-lg-9"><input type="text" class="form-control" name="pseudo" placeholder="pseudo" value="<?php echo $pseudo; ?>"></div>
-        <div class="col-lg-3">Email :</div>
-            <div class="form-group col-lg-9"><input type="email" class="form-control" name="email" placeholder="email" value="<?php echo $email; ?>"></div>
-        <div class="col-lg-3">Mot de passe :</div>
-        <div class="form-group col-lg-9"><input type="password" class="form-control" name="password" placeholder="password" value="<?php echo $password; ?>"></div>
-    </div>
-        <input type="submit" class="btn btn-info" name="insert" value="insert">
-        <input type="submit" class="btn btn-success" name="update" value="update">
-        <input type="submit" class="btn btn-danger" name="delete" value="delete">
-        <input type="submit" class="btn btn-warning" name="search" value="search">
-    </form>
-</div>
+    <h2>Liste</h2>
+    <a href="add.php">Ajouter<br></a>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Pseudo</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+
+            <?php
+                $stmt = $db = $db->prepare("SELECT id, nom, prenom, pseudo, email FROM joueur");
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+                    foreach ($result as $row) {
+
+
+                        ?>
+
+                        <tr>
+                            <td><?php $row['id']; ?></td>
+                            <td><?php $row['nom']; ?></td>
+                            <td><?php $row['prenom']; ?></td>
+                            <td><?php $row['pseudo']; ?></td>
+                            <td><?php $row['email']; ?></td>
+                            <td>
+                                <a href="edit.php?id=<?php $row['id']?>">Edit</a> |
+                                <a href="delete.php">Delete</a>
+
+
+                            </td>
+                        </tr>
+
+                        <?php
+                    }
+            ?>
+
+        </table>
 </body>
+</html>

@@ -1,5 +1,7 @@
 <?php
+
 require ('Database.php');
+
 
 
 function chargerClasse($classname)
