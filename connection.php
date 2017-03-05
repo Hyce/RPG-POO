@@ -1,15 +1,20 @@
 <?php
-require_once ('Database.php');
+/**
+ * Created by PhpStorm.
+ * User: annel
+ * Date: 05/03/2017
+ * Time: 23:32
+ */
 
 // Start Session
 session_start();
 
 // Database connection
-require __DIR__ . 'Database.php';
+require __DIR__ . '/database.php';
 $db = DB();
 
 // Application library ( with DemoLib class )
-require __DIR__ . 'library.php';
+require __DIR__ . '/lib/library.php';
 $app = new DemoLib();
 
 $login_error_message = '';
@@ -59,7 +64,7 @@ if (!empty($_POST['btnRegister'])) {
         $user_id = $app->Register($_POST['name'], $_POST['email'], $_POST['username'], $_POST['password']);
         // set session and redirect user to the profile page
         $_SESSION['user_id'] = $user_id;
-        header("Location: .php");
+        header("Location: profile.php");
     }
 }
 ?>
@@ -67,9 +72,8 @@ if (!empty($_POST['btnRegister'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>TP - PHP POO</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 
@@ -77,16 +81,16 @@ if (!empty($_POST['btnRegister'])) {
     <div class="row">
         <div class="col-md-12">
             <h2>
-                PHP Login Registration System with PDO Connection using SHA-256 Cryptographic Hash Algorithm to store Password
+                TP - PHPPOO
             </h2>
         </div>
     </div>
     <div class="form-group">
-        Note: This is demo version from iTech Empires tutorials.
+       Inscrivez vous pour pouvoir jouer.
     </div>
     <div class="row">
         <div class="col-md-5 well">
-            <h4>Register</h4>
+            <h4>Inscription</h4>
             <?php
             if ($register_error_message != "") {
                 echo '<div class="alert alert-danger"><strong>Error: </strong> ' . $register_error_message . '</div>';
@@ -94,7 +98,7 @@ if (!empty($_POST['btnRegister'])) {
             ?>
             <form action="index.php" method="post">
                 <div class="form-group">
-                    <label for="">Name</label>
+                    <label for="">Nom</label>
                     <input type="text" name="name" class="form-control"/>
                 </div>
                 <div class="form-group">
@@ -102,21 +106,21 @@ if (!empty($_POST['btnRegister'])) {
                     <input type="email" name="email" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label for="">Username</label>
+                    <label for="">Pseudo</label>
                     <input type="text" name="username" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label for="">Password</label>
+                    <label for="">Mot de passe</label>
                     <input type="password" name="password" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="btnRegister" class="btn btn-primary" value="Register"/>
+                    <input type="submit" name="btnRegister" class="btn btn-primary" value="Inscription"/>
                 </div>
             </form>
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-5 well">
-            <h4>Login</h4>
+            <h4>Connexion</h4>
             <?php
             if ($login_error_message != "") {
                 echo '<div class="alert alert-danger"><strong>Error: </strong> ' . $login_error_message . '</div>';
@@ -124,15 +128,15 @@ if (!empty($_POST['btnRegister'])) {
             ?>
             <form action="index.php" method="post">
                 <div class="form-group">
-                    <label for="">Username/Email</label>
+                    <label for="">Pseudo/Email</label>
                     <input type="text" name="username" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label for="">Password</label>
+                    <label for="">Mot de passe</label>
                     <input type="password" name="password" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="btnLogin" class="btn btn-primary" value="Login"/>
+                    <input type="submit" name="btnLogin" class="btn btn-primary" value="Connexion"/>
                 </div>
             </form>
         </div>

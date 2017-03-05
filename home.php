@@ -1,15 +1,19 @@
 <?php
-require_once ('Database.php');
-
+/**
+ * Created by PhpStorm.
+ * User: annel
+ * Date: 05/03/2017
+ * Time: 23:53
+ */
 // Start Session
 session_start();
 
 // Database connection
-require __DIR__ . 'Database.php';
+require __DIR__ . '/database.php';
 $db = DB();
 
 // Application library ( with DemoLib class )
-require __DIR__ . 'library.php';
+require __DIR__ . '/lib/library.php';
 $app = new DemoLib();
 
 $login_error_message = '';
@@ -59,7 +63,7 @@ if (!empty($_POST['btnRegister'])) {
         $user_id = $app->Register($_POST['name'], $_POST['email'], $_POST['username'], $_POST['password']);
         // set session and redirect user to the profile page
         $_SESSION['user_id'] = $user_id;
-        header("Location: .php");
+        header("Location: profile.php");
     }
 }
 ?>
@@ -138,6 +142,3 @@ if (!empty($_POST['btnRegister'])) {
         </div>
     </div>
 </div>
-
-</body>
-</html>

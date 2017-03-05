@@ -1,314 +1,135 @@
 <?php
 
-require ('Database.php');
-
-
-
-function chargerClasse($classname)
-{
-	require $classname.'.php';
-}
-spl_autoload_register('chargerClasse');
 session_start();
 
+require __DIR__ . '/database.php';
+$db = DB();
 
+require __DIR__ . '/lib/library.php';
+$app = new DemoLib();
 
-if (isset($_GET['deconnexion'])){
-	session_destroy();
-	header('Location: .');
-	exit();
-}
+$login_error_message = '';
+$register_error_message = '';
 
-if (isset($_SESSION['perso'])){
-	$perso = $_SESSION['perso'];
-}
+if (!empty($_POST['btnLogin'])) {
 
+	$username = trim($_POST['username']);
+	$password = trim($_POST['password']);
 
-/*
-$req = $db->prepare("INSERT INTO hero (nom, pv) VALUES (:nom, :pv)");
-$req->execute(array(
-            "nom" => $nom,
-            "pv" => $pv
-
-            ));
-*/
-$manager = new PersonnagesManager();
-
-if (isset($_POST['creer']) && isset($_POST['nom'])){
-	$perso = new Personnage();
-	$perso->setNom($_POST['nom']);
-	
-	if (!$perso->nomValide()){
-		$message = 'Le nom choisi est invalide.';
-		unset($perso);
-	} elseif ($manager->exists($perso->nom())){
-		$message = 'Le nom du personnage est déjà pris.';
-		unset($perso);
+	if ($username == "") {
+		$login_error_message = 'Username field is required!';
+	} else if ($password == "") {
+		$login_error_message = 'Password field is required!';
 	} else {
-		$manager->add($perso);
-	}
-	
-} elseif (isset($_POST['utiliser']) && isset($_POST['nom'])){
-	if ($manager->exists($_POST['nom']))
-	{
-		$perso = $manager->get($_POST['nom']);
-	} else {
-		$message = 'Ce personnage n\'existe pas !';
-	}
-	
-} elseif (isset($_GET['frapper'])){
-	
-	if (!isset($perso)){
-		$message = 'Merci de créer un personnage ou de vous identifier.';
-	} else {
-		if (!$manager->exists((int) $_GET['frapper'])){
-			$message = 'Le personnage que vous voulez frapper n\'existe pas!';
-		} else {
-			
-			$persoAFrapper = $manager->get((int) $_GET['frapper']);
-			$retour = $perso->frapper($persoAFrapper);
-			
-			switch($retour)
-			{
-				case Personnage::CEST_MOI : 
-					$message = 'Mais... pouquoi voulez-vous vous frapper ???';
-					break;
-				case Personnage::PAS_AUJOURDHUI : 
-					$message = 'Vous avais déjà frappé 3 fois aujourd\'hui. Revenez demain !';
-					break;
-				case Personnage::PERSONNAGE_FRAPPE : 
-					$message = 'Le personnage a bien été frappé !';
-					
-					$perso->gagnerExperience();
-					
-					$manager->update($perso);
-					$manager->update($persoAFrapper);
-					
-					break;
-				case Personnage::PERSONNAGE_TUE;
-					$message = 'Vous avez tué ce personnage !';
-					
-					$perso->gagnerExperience();
-
-					$manager->update($perso);
-					$manager->delete($persoAFrapper);
-					
-					break;
-			}
+		$user_id = $app->Login($username, $password);
+		if($user_id > 0)
+		{
+			$_SESSION['user_id'] = $user_id;
+			header("Location: profile.php");
+		}
+		else
+		{
+			$login_error_message = 'Invalid login details!';
 		}
 	}
 }
 
-		$manager2 = new MonstresManager();
-
-
-
-
-if (isset($_POST['creer']) && isset($_POST['nom'])){
-	$monster = new Monstre(['nom' => $_POST['nom']]);
-	
-	if (!$monster->nomValide()){
-		$message = 'Le nom choisi est invalide.';
-		unset($monster);
-	} elseif ($manager2->exists($monster->nom())){
-		$message = 'Le nom du monstre est déjà pris.';
-		unset($monster);
+if (!empty($_POST['btnRegister'])) {
+	if ($_POST['name'] == "") {
+		$register_error_message = 'Name field is required!';
+	} else if ($_POST['email'] == "") {
+		$register_error_message = 'Email field is required!';
+	} else if ($_POST['username'] == "") {
+		$register_error_message = 'Username field is required!';
+	} else if ($_POST['password'] == "") {
+		$register_error_message = 'Password field is required!';
+	} else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+		$register_error_message = 'Invalid email address!';
+	} else if ($app->isEmail($_POST['email'])) {
+		$register_error_message = 'Email is already in use!';
+	} else if ($app->isUsername($_POST['username'])) {
+		$register_error_message = 'Username is already in use!';
 	} else {
-		$manager2->add($monster);
-	}
-	
-} elseif (isset($_POST['utiliser']) && isset($_POST['nom'])){
-	if ($manager2->exists($_POST['nom']))
-	{
-		$monster = $manager2->get($_POST['nom']);
-	} else {
-		$message = 'Ce monstre n\'existe pas !';
-	}
-	
-} elseif (isset($_GET['frapper'])){
-	
-	if (!isset($monster)){
-		$message = 'Merci de créer un monstre ou de vous identifier.';
-	} else {
-		if (!$manager2->exists((int) $_GET['frapper'])){
-			$message = 'Le Monstre que vous voulez frapper n\'existe pas!';
-		} else {
-			
-			$monsterAFrapper = $manager2->get((int) $_GET['frapper']);
-			$retour = $monster->frapper($monsterAFrapper);
-			
-			switch($retour)
-			{
-				case Monstre::CEST_MOI : 
-					$message = 'Mais... pouquoi voulez-vous vous frapper ???';
-					break;
-				case Monstre::PAS_AUJOURDHUI : 
-					$message = 'Vous avais déjà frappé 3 fois aujourd\'hui. Revenez demain !';
-					break;
-				case Monstre::MONSTRE_FRAPPE : 
-					$message = 'Le Monstre a bien été frappé !';
-					
-					$monster->gagnerExperience();
-					
-					$manager2->update($monster);
-					$manager2->update($monsterAFrapper);
-					
-					break;
-				case Monstre::MONSTRE_TUE;
-					$message = 'Vous avez tué ce Monstre !';
-					
-					$monster->gagnerExperience();
+		$user_id = $app->Register($_POST['name'], $_POST['email'], $_POST['username'], $_POST['password']);
 
-					$manager2->update($monster);
-					$manager2->delete($monsterAFrapper);
-					
-					break;
-			}
-		}
+		$_SESSION['user_id'] = $user_id;
+		header("Location: profile.php");
 	}
 }
 ?>
-
-		
-		
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+	<meta charset="UTF-8">
+	<title>PHP PDO	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></head>
 <body>
-	<div class="container">
-			
-		<p> Nombre de personnages créés : <?= $manager->count() ?></p>
-	<?php
-		if (isset($message)){
-			echo '<p>'. $message . '</p>';
-		}
-		
-		if (isset($perso)){
-		?>
-		
-			<p><a href="?deconnexion=1">Déconnexion</a></p>
-		
-			<fieldset>
-				<legend>Mes informations</legend>
-				<p>
-					Nom : <?=  htmlspecialchars($perso->nom()) ?><br /> 
-					PV : <?= $perso->pv() ?>
-					Expérience : <?= $perso->experience() ?>
-					Niveau : <?= $perso->niveau() ?>
-					Nombre des coups : <?= $perso->nbCoups() ?>
-					
-				</p>
-			</fieldset>
-			<fieldset>
-				<legend>Qui frapper?</legend>
-				<p>
-					<?php 
-					
-					$persos = $manager->getList($perso->nom());	
-					if (empty($persos)) {
-						echo 'Personne à frapper!';
-					} else {
-						foreach($persos as $unPerso){
-							echo '<a href="?frapper='.$unPerso->id().'">'.htmlspecialchars($unPerso->nom()).'</a> (pv : '.$unPerso->pv().', expérience : '.$unPerso->experience().', niveau : '.$unPerso->niveau().', nombre des coups : '.$unPerso->nbCoups().'<br />';
-							
-						}
-					}
-					
-					?>
-				</p>
-			</fieldset>
-			
-		
-		<?php
 
-		} else {
-			
-	?>
-			<form action="" method = "post">
-				<p>
-					Nom : <input type="text" name="nom" maxlength="50" />
-					<input type="submit" value = "Créer ce personnage" name="creer" />
-					<input type="submit" value = "Utiliser ce personnage" name="utiliser" />
-				</p>
-			</form>
-	<?php
-		}
-	?>
-	
-	
-
-		<p> Nombre de monstres créés : <?= $manager2->count() ?></p>
-	<?php
-		if (isset($message)){
-			echo '<p>'. $message . '</p>';
-		}
-		
-		if (isset($monster)){
-		?>
-		
-			<p><a href="?deconnexion=1">Déconnexion</a></p>
-		
-			<fieldset>
-				<legend>Mes informations</legend>
-				<p>
-					Nom : <?=  htmlspecialchars($monster->nom()) ?><br /> 
-					PV : <?= $monster->pv() ?>
-					Expérience : <?= $monster->experience() ?>
-					Niveau : <?= $monster->niveau() ?>
-					Nombre des coups : <?= $monster->nbCoups() ?>
-					
-				</p>
-			</fieldset>
-			<fieldset>
-				<legend>Qui frapper?</legend>
-				<p>
-					<?php 
-					
-					$monsters = $manager2->getList($monster->nom());	
-					if (empty($monsters)) {
-						echo 'Pas de monstre  à frapper!';
-					} else {
-						foreach($monsters as $unmonster){
-							echo '<a href="?frapper='.$unmonster->id().'">'.htmlspecialchars($unmonster->nom()).'</a> (pv : '.$unmonster->pv().', expérience : '.$unmonster->experience().', niveau : '.$unmonster->niveau().', nombre des coups : '.$unmonster->nbCoups().'<br />';
-							
-						}
-					}
-					
-					?>
-				</p>
-			</fieldset>
-			
-		
-		<?php
-
-		} else {
-			
-	?>
-			<form action="" method = "post">
-				<p>
-					Nom : <input type="text" name="nom" maxlength="50" />
-					<input type="submit" value = "Créer ce Monstre" name="creer" />
-					<input type="submit" value = "Utiliser ce Monstre" name="utiliser" />
-				</p>
-			</form>
-	<?php
-		}
-	?>
-	
-
-
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>
+				PHP PDO
+			</h2>
+		</div>
 	</div>
-	</body>
+	<div class="form-group">
+		Jouer !
+	</div>
+	<div class="row">
+		<div class="col-md-5 well">
+			<h4>Inscription</h4>
+			<?php
+			if ($register_error_message != "") {
+				echo '<div class="alert alert-danger"><strong>Error: </strong> ' . $register_error_message . '</div>';
+			}
+			?>
+			<form action="index.php" method="post">
+				<div class="form-group">
+					<label for="">Name</label>
+					<input type="text" name="name" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<label for="">Email</label>
+					<input type="email" name="email" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<label for="">Pseudo</label>
+					<input type="text" name="username" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<label for="">Mot de passe</label>
+					<input type="password" name="password" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<input type="submit" name="btnRegister" class="btn btn-primary" value="Register"/>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-5 well">
+			<h4>Connexion</h4>
+			<?php
+			if ($login_error_message != "") {
+				echo '<div class="alert alert-danger"><strong>Error: </strong> ' . $login_error_message . '</div>';
+			}
+			?>
+			<form action="index.php" method="post">
+				<div class="form-group">
+					<label for="">Pseudo/Email</label>
+					<input type="text" name="username" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<label for="">Mot de passe</label>
+					<input type="password" name="password" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<input type="submit" name="btnLogin" class="btn btn-primary" value="Connexion"/>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+</body>
 </html>
-<?php
-if (isset($perso)){
-	$_SESSION['perso'] = $perso;
-}
-?>
